@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitepaper: Seguridad y Privacidad | Floovu AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --whitepaper-bg: #0a0a0f;
+        }
+
+        body {
+            background-color: var(--whitepaper-bg);
+            color: #fff;
+            padding-top: 80px;
+        }
+
+        .whitepaper-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .wp-header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 40px;
+        }
+
+        .wp-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00e5ff, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .wp-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .section-wp {
+            margin-bottom: 50px;
+        }
+
+        .section-wp h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-wp h2 i {
+            font-size: 1.5rem;
+        }
+
+        .section-wp p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .trust-seal {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(0, 229, 255, 0.1));
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .whitepaper-content {
+                padding: 30px;
+                margin: 20px;
+            }
+            .feature-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver a Floovu.ai</a>
+        
+        <article class="whitepaper-content">
+            <header class="wp-header">
+                <div style="text-transform: uppercase; color: var(--primary); font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">Documento Técnico</div>
+                <h1>Cero Entrenamiento Público</h1>
+                <p>Protocolos de Seguridad y Blindaje de Datos para el Sector Legal e Inmobiliario</p>
+            </header>
+
+            <section class="section-wp">
+                <h2><i class="fa-solid fa-shield-virus"></i> El Compromiso de Privacidad</h2>
+                <p>En Floovu AI, reconocemos que el <strong>secreto profesional</strong> y la <strong>confidencialidad de los datos</strong> son los activos más valiosos de una firma legal o inmobiliaria. Este documento detalla cómo nuestra infraestructura v8 PRO garantiza que su información nunca abandone el entorno controlado de su empresa.</p>
+            </section>
+
+            <section class="section-wp">
+                <h2><i class="fa-solid fa-server"></i> Arquitectura de Aislamiento Total</h2>
+                <p>A diferencia de las herramientas de IA generativa de consumo masivo, Floovu utiliza una arquitectura de <strong>Instancia Aislada</strong>:</p>
+                <div class="feature-box">
+                    <div class="feature-item">
+                        <h4>No Entrenamiento Público</h4>
+                        <p>Sus expedientes, nombres de clientes y estrategias legales NUNCA son utilizados para re-entrenar modelos globales.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Cifrado AES-256</h4>
+                        <p>Los datos en reposo y en tránsito cuentan con cifrado de grado militar, el mismo estándar utilizado por entidades bancarias.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-wp">
+                <h2><i class="fa-solid fa-gavel"></i> Cumplimiento Legal (Ley 1581)</h2>
+                <p>Nuestra plataforma está diseñada íntegramente bajo el marco legal de la <strong>Ley 1581 de 2012</strong> en Colombia. Implementamos políticas estrictas de tratamiento de datos personales, asegurando que cada integración (WhatsApp, CRM, Google Sheets) cumpla con los estándares de habeas data.</p>
+            </section>
+
+            <section class="section-wp">
+                <h2><i class="fa-solid fa-microchip"></i> Protocolo Anti-Filtración</h2>
+                <p>Utilizamos pasarelas de API empresariales que filtran proactivamente información sensible antes del procesamiento, permitiendo a sus abogados trabajar con la tranquilidad de que su propiedad intelectual está blindada.</p>
+            </section>
+
+            <div class="trust-seal">
+                <i class="fa-solid fa-check-double" style="font-size: 3rem; color: #4CAF50; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Floovu Trust Seal v8</h3>
+                <p style="color: #e0e0e0;">Este entorno de IA ha sido auditado para garantizar la privacidad operativa total de su firma.</p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Floovu AI. Confidencialidad Asegurada.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // No JS needed for static whitepaper visibility for now
+    </script>
+</body>
+
+</html>
