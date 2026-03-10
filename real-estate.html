@@ -58,52 +58,10 @@
             margin-bottom: 15mm;
         }
 
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icon-box {
-            width: 50px;
+        .logo-main-img {
             height: 50px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo-icon-box img {
-            position: absolute;
-            width: 130%;
-            height: auto;
-            top: -5%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .logo-text-box {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .logo-brand {
-            font-family: 'Outfit', sans-serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-tagline {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 500;
-            color: #cbd5e1;
-            letter-spacing: 0.2px;
+            width: auto;
+            display: block;
         }
 
         .badge {
@@ -437,15 +395,7 @@
     <div class="a4-container">
 
         <div class="header">
-            <div class="logo-wrapper">
-                <div class="logo-icon-box">
-                    <img src="images/logo.png" alt="Floovu Icon">
-                </div>
-                <div class="logo-text-box">
-                    <span class="logo-brand">Floovu</span>
-                    <span class="logo-tagline">automation AI</span>
-                </div>
-            </div>
+            <img src="images/logo.png" alt="Floovu AI" class="logo-main-img" style="height: 50px; width: auto;">
             <span class="badge">Análisis de Capacidades</span>
         </div>
 

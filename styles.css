@@ -200,52 +200,22 @@ a {
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
 }
 
-.logo-icon-box {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.logo-main-img {
+    height: 48px;
+    /* Tamaño ideal para el navbar */
+    width: auto;
+    display: block;
+    transition: var(--transition);
 }
 
-.logo-icon-box img {
-    position: absolute;
-    width: 130%;
-    /* Slightly larger to focus on the icon */
-    height: auto;
-    top: -5%;
-    /* Position to show the FV part */
-    left: 50%;
-    transform: translateX(-50%);
+.logo-wrapper:hover .logo-main-img {
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
-.logo-text-box {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo-brand {
-    font-family: 'Outfit', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-}
-
-.logo-tagline {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    color: #cbd5e1;
-    letter-spacing: 0.2px;
-}
 
 .nav-links {
     list-style: none;
