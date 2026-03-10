@@ -61,7 +61,7 @@ a {
 }
 
 .section {
-    padding: 35px 0;
+    padding: 25px 0;
 }
 
 .text-center {
@@ -558,8 +558,8 @@ a {
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding: 50px;
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .contact-info h2 {
@@ -875,7 +875,7 @@ a {
 /* FAQ Section Refined */
 .faq-container {
     max-width: 900px;
-    margin: 20px auto;
+    margin: 15px auto 0;
     display: grid;
     gap: 15px;
 }
