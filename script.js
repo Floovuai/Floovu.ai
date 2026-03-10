@@ -80,6 +80,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar rotación cada 3 minutos (según sugerencia del usuario)
     setInterval(showSocialProof, 180000);
     setTimeout(showSocialProof, 10000); // Primera vez después de 10s
+
+    // --- ROI CALCULATOR LOGIC ---
+    const lawyersSlider = document.getElementById('lawyers-slider');
+    const hoursSlider = document.getElementById('hours-slider');
+    const lawyersVal = document.getElementById('lawyers-val');
+    const hoursVal = document.getElementById('hours-val');
+    const savingsAmount = document.getElementById('savings-amount');
+    const freedHours = document.getElementById('freed-hours');
+
+    function updateROI() {
+        if (!lawyersSlider || !hoursSlider) return;
+
+        const lawyers = parseInt(lawyersSlider.value);
+        const hoursPerWeek = parseInt(hoursSlider.value);
+        
+        // Costo promedio hora abogado senior en Colombia: ~$120.000 COP
+        const hourlyRate = 120000;
+        const weeksPerMonth = 4.3;
+        
+        // Cálculo de horas totales al mes
+        const totalHoursMonth = lawyers * hoursPerWeek * weeksPerMonth;
+        
+        // Floovu ahorra el 90% del tiempo
+        const savingsEfficiency = 0.9;
+        const hoursSaved = totalHoursMonth * savingsEfficiency;
+        const moneySaved = hoursSaved * hourlyRate;
+
+        // Actualizar UI
+        lawyersVal.innerText = lawyers;
+        hoursVal.innerText = hoursPerWeek + 'h';
+        
+        // Formatear moneda (COP)
+        savingsAmount.innerText = '$' + Math.round(moneySaved).toLocaleString('es-CO');
+        freedHours.innerText = Math.round(hoursSaved) + ' horas';
+    }
+
+    if (lawyersSlider && hoursSlider) {
+        lawyersSlider.addEventListener('input', updateROI);
+        hoursSlider.addEventListener('input', updateROI);
+        updateROI(); // Inicializar
+    }
 });
 
 // --- PUNTO 7: EFECTO ESPEJO (FILTER PROFILE) ---

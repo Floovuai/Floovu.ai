@@ -1654,3 +1654,192 @@ a {
     .coi-section { padding: 40px 25px; }
     .impact-percent { font-size: 2.8rem; }
 }
+
+/* ROI Calculator */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.roi-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+}
+
+.roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.slider-value {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.4rem;
+    min-width: 60px;
+    text-align: right;
+}
+
+.calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.result-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--primary);
+}
+
+.result-label {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.result-amount {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Integration Grid */
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.integration-item {
+    padding: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.integration-item i {
+    font-size: 3rem;
+    transition: var(--transition);
+}
+
+.integration-item:hover i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.integration-item span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Security Flow */
+.security-flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    min-width: 180px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.flow-step:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.highlight-step {
+    border-color: var(--primary);
+    background: rgba(0, 229, 255, 0.05);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+.flow-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.flow-arrow {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+}
+
+.flow-badge {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .security-flow-diagram {
+        flex-direction: column;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
+

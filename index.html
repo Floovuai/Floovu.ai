@@ -551,6 +551,37 @@
         </div>
     </section>
 
+    <!-- Fricción Tecnológica Zero -->
+    <section id="integraciones" class="section" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Fricción Tecnológica Zero</h2>
+            <p class="section-subtitle text-center" data-aos="fade-up">No cambie su forma de trabajar. Floovu se integra a lo que ya usa.</p>
+            
+            <div class="integration-grid" data-aos="fade-up">
+                <div class="integration-item glass-panel">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                    <span>WhatsApp Business</span>
+                </div>
+                <div class="integration-item glass-panel">
+                    <i class="fa-brands fa-google-drive" style="color: #4285F4;"></i>
+                    <span>Google Workspace</span>
+                </div>
+                <div class="integration-item glass-panel">
+                    <i class="fa-solid fa-envelope" style="color: #EA4335;"></i>
+                    <span>Outlook & Email</span>
+                </div>
+                <div class="integration-item glass-panel">
+                    <i class="fa-solid fa-database" style="color: var(--primary);"></i>
+                    <span>CRM Inmobiliarios</span>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;" data-aos="zoom-in">
+                <p style="font-size: 1.3rem; color: #fff; font-weight: 600;">"Sin curvas de aprendizaje. Conectamos la IA a sus flujos actuales en 7 días."</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Metodología y Garantía -->
     <section id="metodologia" class="section">
         <div class="container">
@@ -643,25 +674,36 @@
                     </table>
                 </div>
 
-                <!-- Punto 9: Matemática de la Eficiencia -->
-                <div class="math-section" data-aos="fade-up" style="margin-top: 30px;">
-                    <h3 class="text-center" style="font-size: 2rem; margin-bottom: 30px;">Matemática de la Eficiencia (ROI)</h3>
-                        <div class="math-table">
-                        <div class="math-row">
-                            <span class="math-label">Costo Abogado Senior (Lectura 100 expedientes / 40h)</span>
-                            <span class="math-value">$4.500.000+ COP</span>
+                <!-- ROI Calculator Widget -->
+                <div class="roi-calculator glass-panel" data-aos="fade-up" style="margin-top: 50px; padding: 40px;">
+                    <h3 class="text-center" style="font-size: 2rem; margin-bottom: 35px;">Calculador de Retorno de Inversión (ROI)</h3>
+                    <div class="calculator-grid">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label>¿Cuántos abogados tiene su firma?</label>
+                                <div class="slider-container">
+                                    <input type="range" min="1" max="50" value="5" class="roi-slider" id="lawyers-slider">
+                                    <span class="slider-value" id="lawyers-val">5</span>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-top: 30px;">
+                                <label>¿Horas/semana en lectura de expedientes por abogado?</label>
+                                <div class="slider-container">
+                                    <input type="range" min="1" max="40" value="20" class="roi-slider" id="hours-slider">
+                                    <span class="slider-value" id="hours-val">20h</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="math-row">
-                            <span class="math-label">Costo Estimado de Error Humano (Multas/Términos)</span>
-                            <span class="math-value">$2.000.000+ COP</span>
-                        </div>
-                        <div class="math-row">
-                            <span class="math-label">Inversión Floovu PRO v8 (1h de supervisión)</span>
-                            <span class="math-value">$600.000 COP</span>
-                        </div>
-                        <div class="math-row">
-                            <span class="math-label">Ahorro Mensual Estimado</span>
-                            <span class="math-value">+$5.900.000 COP</span>
+                        <div class="calc-results">
+                            <div class="result-card">
+                                <span class="result-label">Ahorro Mensual Estimado</span>
+                                <span class="result-amount gradient-text" id="savings-amount">$0</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">Talento Senior Liberatado</span>
+                                <span class="result-amount" id="freed-hours" style="color: var(--primary);">0 horas</span>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">* Estimación basada en costos promedio de honorarios senior en Colombia y reducción operativa del 90%.</p>
                         </div>
                     </div>
                 </div>
@@ -683,6 +725,26 @@
                     <strong>Cero filtraciones. Cero uso externo.</strong>
                 </p>
                 <a href="whitepaper-seguridad.html" class="whitepaper-link" style="font-size: 1.1rem;"><i class="fa-solid fa-file-pdf" style="margin-right: 8px;"></i>Ver Whitepaper Técnico: Protocolos de Seguridad Floovu AI</a>
+                
+                <!-- Visual Flow of Security -->
+                <div class="security-flow-diagram" data-aos="fade-up" style="margin-top: 60px;">
+                    <div class="flow-step">
+                        <div class="flow-icon"><i class="fa-solid fa-file-shield"></i></div>
+                        <p>Su Expediente</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="flow-step highlight-step">
+                        <div class="flow-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <p>Túnel Privado Floovu</p>
+                        <span class="flow-badge">Cifrado Grado Militar</span>
+                    </div>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="flow-step">
+                        <div class="flow-icon"><i class="fa-solid fa-brain"></i></div>
+                        <p>IA Aislada</p>
+                        <span class="flow-badge">Sin acceso público</span>
+                    </div>
+                </div>
             </div>
 
             <div class="compliance-section" data-aos="fade-up">
