@@ -18,6 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Cerrar otros
+            faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+
+            // Abrir el actual si no estaba activo
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
     // Efecto sutil de Navbar al hacer scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
