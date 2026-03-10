@@ -58,8 +58,7 @@ body::before {
 h1,
 h2,
 h3,
-h4,
-.logo-text {
+h4 {
     font-family: 'Outfit', sans-serif;
 }
 
@@ -204,8 +203,8 @@ a {
 }
 
 .logo-main-img {
-    height: 48px;
-    /* Tamaño ideal para el navbar */
+    height: 60px;
+    /* Ajustado para el nuevo logo horizontal */
     width: auto;
     display: block;
     transition: var(--transition);
