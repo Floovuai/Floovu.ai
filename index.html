@@ -72,6 +72,28 @@
         <div class="bg-glow"></div>
     </section>
 
+    <!-- Punto 7: Efecto Espejo (Selector de Perfil) -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="profile-selector" data-aos="fade-up">
+                <button class="profile-btn active" onclick="filterProfile('legal')">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <div>
+                        <h4>Soy Abogado / Firma</h4>
+                        <p>Busco eficiencia procesal y blindaje</p>
+                    </div>
+                </button>
+                <button class="profile-btn" onclick="filterProfile('realestate')">
+                    <i class="fa-solid fa-building-user"></i>
+                    <div>
+                        <h4>Soy Inmobiliaria / Agente</h4>
+                        <p>Busco cierres rápidos y automatización</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Problema - Solución -->
     <section id="problema" class="section flex-center">
         <div class="container text-center" data-aos="fade-up">
@@ -98,6 +120,40 @@
 
             <h3 class="gradient-text" style="font-size: 2rem; margin-top: 40px; padding: 0 5%; font-weight: 700;">IA
                 Senior que transforma horas de trabajo manual en segundos de precisión quirúrgica.</h3>
+        </div>
+    </section>
+
+    <!-- Punto 1: Costo de Inacción (COI) -->
+    <section id="coi" class="section">
+        <div class="container">
+            <div class="coi-section" data-aos="zoom-in">
+                <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 15px;">¿Qué pasa si no automatizas hoy?</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 800px;">El mercado legal y de construcción avanza a velocidades récord. El mayor riesgo no es el costo de la tecnología, sino el <strong>Costo de la Inacción (COI)</strong>.</p>
+                
+                <div class="coi-grid">
+                    <div class="coi-item">
+                        <div class="coi-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <div class="coi-text">
+                            <h4>Vencimiento de Términos</h4>
+                            <p>El error humano en el CGP/CPACA puede costar millones en multas o procesos perdidos por un solo día de descuido.</p>
+                        </div>
+                    </div>
+                    <div class="coi-item">
+                        <div class="coi-icon"><i class="fa-solid fa-user-slash"></i></div>
+                        <div class="coi-text">
+                            <h4>Agotamiento de Equipo Senior</h4>
+                            <p>Tus mejores talentos están renunciando por cargas operativas que una IA podría resolver en segundos.</p>
+                        </div>
+                    </div>
+                    <div class="coi-item">
+                        <div class="coi-icon"><i class="fa-solid fa-chart-line-down" style="transform: rotate(180deg);"></i></div>
+                        <div class="coi-text">
+                            <h4>Pérdida de Ventaja Competitiva</h4>
+                            <p>Mientras lo piensas, tu competencia ya está usando Floovu para responder 90% más rápido que tú.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -138,7 +194,7 @@
             <div class="products-grid">
                 <!-- Legal AI -->
                 <div class="product-card glass-panel legal-card" data-aos="flip-left" data-aos-duration="1000">
-                    <div class="product-image-container">
+                    <div class="product-image-container shimmer-ia">
                         <a href="legal-ai-base.html" target="_blank"
                             style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; z-index: 10; position: relative; text-decoration: none;">
                             <img src="images/legal-ai.png" alt="Floovu Legal AI Colombia"
@@ -175,7 +231,7 @@
 
                 <!-- Legal AI PRO v8 (NUEVO - PREMIUM) -->
                 <div class="product-card glass-panel premium-card" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="product-image-container">
+                    <div class="product-image-container shimmer-ia">
                         <a href="legal-ai-pro-v8.html" target="_blank"
                             style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; z-index: 10; position: relative; text-decoration: none;">
                             <img src="images/legal-ai-pro-v8.png" alt="Floovu Legal AI PRO v8 Premium"
@@ -198,7 +254,9 @@
                             </li>
                         </ul>
 
-                        <div class="pricing" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+                        </ul>
+
+                        <div class="pricing shimmer-ia" style="border: 1px solid rgba(245, 158, 11, 0.3);">
                             <div class="price-item">
                                 <span class="label">Implementación (Único)</span>
                                 <span class="amount">$2.800.000</span>
@@ -215,7 +273,7 @@
 
                 <!-- Real Estate AI -->
                 <div class="product-card glass-panel real-estate-card">
-                    <div class="product-image-container">
+                    <div class="product-image-container shimmer-ia">
                         <a href="real-estate.html" target="_blank"
                             style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; z-index: 10; position: relative; text-decoration: none;">
                             <img src="images/real-estate-ai.png" alt="Floovu Real Estate AI Colombia"
@@ -312,9 +370,10 @@
 
             <div class="stats-grid"
                 style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-                <!-- Testimonio 1 -->
-                <div class="testimonial-card glass-panel fade-up" data-aos="zoom-in" data-aos-delay="150"
+                <!-- Testimonio 1 (Mini Caso de Estudio) -->
+                <div class="testimonial-card glass-panel fade-up profile-legal" data-aos="zoom-in" data-aos-delay="150"
                     style="padding: 35px 25px; flex: 1; min-width: 320px; max-width: 380px;">
+                    <div class="case-tag">Caso de Éxito #242</div>
                     <div class="stars" style="color: #ecc94b; margin-bottom: 12px; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -322,9 +381,7 @@
                     </div>
                     <p
                         style="font-style: italic; color: #e0e0e0; margin-bottom: 25px; font-size: 1rem; line-height: 1.6;">
-                        "Al principio me costó creer que una IA pudiera entender la complejidad del código procesal
-                        colombiano, pero Floovu nos demostró lo contrario. Hoy mis asociados no pierden tiempo en
-                        transcripciones, se enfocan en la estrategia."</p>
+                        "Cómo redujimos la gestión de 15 a 2 días: Al principio me costó creer que una IA pudiera entender la complejidad del código procesal colombiano, pero Floovu nos demostró lo contrario."</p>
                     <div class="author-info"
                         style="display: flex; align-items: center; gap: 12px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
                         <img src="images/testimonio-abogado-1.png" alt="Dr. Alejandro Méndez"
@@ -338,7 +395,7 @@
                 </div>
 
                 <!-- Testimonio 2 -->
-                <div class="testimonial-card glass-panel fade-up delay-1" data-aos="zoom-in" data-aos-delay="250"
+                <div class="testimonial-card glass-panel fade-up delay-1 profile-realestate" data-aos="zoom-in" data-aos-delay="250"
                     style="padding: 35px 25px; flex: 1; min-width: 320px; max-width: 380px;">
                     <div class="stars" style="color: #ecc94b; margin-bottom: 12px; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -363,7 +420,7 @@
                 </div>
 
                 <!-- Testimonio 3 -->
-                <div class="testimonial-card glass-panel fade-up delay-2" data-aos="zoom-in" data-aos-delay="350"
+                <div class="testimonial-card glass-panel fade-up delay-2 profile-legal" data-aos="zoom-in" data-aos-delay="350"
                     style="padding: 35px 25px; flex: 1; min-width: 320px; max-width: 380px;">
                     <div class="stars" style="color: #ecc94b; margin-bottom: 12px; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -387,7 +444,7 @@
                 </div>
 
                 <!-- Testimonio 4 -->
-                <div class="testimonial-card glass-panel fade-up delay-3" data-aos="zoom-in" data-aos-delay="450"
+                <div class="testimonial-card glass-panel fade-up delay-3 profile-realestate" data-aos="zoom-in" data-aos-delay="450"
                     style="padding: 35px 25px; flex: 1; min-width: 320px; max-width: 380px;">
                     <div class="stars" style="color: #ecc94b; margin-bottom: 12px; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -412,7 +469,7 @@
                 </div>
 
                 <!-- Testimonio 5 -->
-                <div class="testimonial-card glass-panel fade-up delay-4" data-aos="zoom-in" data-aos-delay="550"
+                <div class="testimonial-card glass-panel fade-up delay-4 profile-legal" data-aos="zoom-in" data-aos-delay="550"
                     style="padding: 35px 25px; flex: 1; min-width: 320px; max-width: 380px;">
                     <div class="stars" style="color: #ecc94b; margin-bottom: 12px; font-size: 1.1rem;">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -530,6 +587,56 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Punto 9: Matemática de la Eficiencia -->
+                <div class="math-section" data-aos="fade-up" style="margin-top: 60px;">
+                    <h3 class="text-center" style="font-size: 2rem; margin-bottom: 30px;">Matemática de la Eficiencia (ROI)</h3>
+                    <div class="math-table">
+                        <div class="math-row">
+                            <span class="math-label">Costo Abogado Senior (Lectura 100 expedientes / 40h)</span>
+                            <span class="math-value">$4.500.000+ COP</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-label">Costo Estimado de Error Humano (Multas/Términos)</span>
+                            <span class="math-value">$2.000.000+ COP</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-label">Inversión Floovu PRO v8 (1h de supervisión)</span>
+                            <span class="math-value">$600.000 COP</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-label">Ahorro Mensual Estimado</span>
+                            <span class="math-value">+$5.900.000 COP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Punto 10: Prueba de Cumplimiento (Compliance & Trust) -->
+    <section id="seguridad" class="section">
+        <div class="container">
+            <div class="compliance-section" data-aos="fade-up" style="margin-top: 40px;">
+                <h2 class="section-title text-center">Seguridad y Blindaje de Datos</h2>
+                <p class="text-center" style="color: var(--text-muted); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">Para los abogados, la seguridad es el bloqueo #1. Por eso construimos Floovu bajo estándares de blindaje extremo.</p>
+                <div class="compliance-grid">
+                    <div class="comp-box">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h4>Cero entrenamiento público</h4>
+                        <p>Tus datos son privados. Nunca se usan para entrenar a ChatGPT ni modelos públicos.</p>
+                    </div>
+                    <div class="comp-box">
+                        <i class="fa-solid fa-file-contract"></i>
+                        <h4>Cumplimiento Ley 1581</h4>
+                        <p>Tratamiento de datos personales bajo el marco legal vigente en Colombia.</p>
+                    </div>
+                    <div class="comp-box">
+                        <i class="fa-solid fa-vault"></i>
+                        <h4>Cifrado Grado Bancario</h4>
+                        <p>Expedientes protegidos con los más altos estándares de tecnología militar.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -561,6 +668,18 @@
                         actuales (WhatsApp, Email) de forma natural, para que su equipo lo use sin necesidad de
                         capacitación técnica compleja.</div>
                 </div>
+
+                <!-- Punto 13: FAQ de Objeciones Reales -->
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">¿La IA va a reemplazar a mis abogados? <i
+                            class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><strong>No.</strong> Les quita el trabajo de pasante para que ellos puedan litigar como socios. La IA maneja la carga operativa, pero el pensamiento estratégico siempre será humano.</div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">¿Qué precisión tiene con el Código de Procedimiento Administrativo (CPACA)? <i
+                            class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Floovu PRO v8 está entrenado específicamente en la narrativa forense colombiana. Entiende la diferencia entre términos de días hábiles e irrigados, y conoce la prelación minsterial del CPACA y el CGP al detalle.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -581,13 +700,29 @@
                         style="font-size: 4.5rem; color: #25D366; filter: drop-shadow(0 0 15px rgba(37,211,102,0.4)); margin-bottom: 10px;"></i>
                     <h4 style="font-size: 1.4rem; margin: 0 0 5px;">Canal de Atención Directa</h4>
                     <p style="font-size: 1.8rem; font-weight: 800; margin: 0 0 25px; color: #fff;">+57 323 835 4169</p>
-                    <a href="https://wa.me/573238354169" target="_blank" class="btn btn-primary"
+                    <!-- Punto 12: WhatsApp Inteligente -->
+                    <a href="https://wa.me/573238354169?text=Hola%20Floovu,%20vengo%20de%20la%20web.%20Me%20interesa%20el%20Plan%20PRO%20v8%20para%20mi%20despacho.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn btn-primary btn-whatsapp-main"
                         style="width: 100%; background: #25D366; border-color: #25D366; box-shadow: 0 8px 25px rgba(37,211,102,0.3); font-size: 1.2rem; padding: 18px;">
                         Iniciar Chat por WhatsApp <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i></a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Punto 6: Botón de Referidos -->
+    <div class="referral-float" onclick="location.href='#contacto'">
+        <i class="fa-solid fa-gift"></i>
+        <span>¿Floovu GRATIS?</span>
+    </div>
+
+    <!-- Punto 11: Social Proof Widget -->
+    <div id="social-proof" class="social-proof-widget">
+        <div class="sp-avatar"><i class="fa-solid fa-check"></i></div>
+        <div class="sp-content">
+            <p id="sp-message">Nueva firma en Medellín activó v8</p>
+            <span id="sp-time">Hace 2 minutos</span>
+        </div>
+    </div>
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/573238354169?text=Hola,%20tengo%20dudas%20sobre%20c%C3%B3mo%20aplicar%20IA%20en%20mi%20oficina.%20%C2%BFPodemos%20hablar%3F"
