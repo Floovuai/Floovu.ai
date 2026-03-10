@@ -31,12 +31,15 @@
             <a href="#inicio" class="logo-wrapper">
                 <img src="images/logo.png" alt="Floovu AI" class="logo-main-img" style="height: 60px; width: auto;">
             </a>
-            <ul class="nav-links">
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#estadisticas">El Futuro</a></li>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#asesorias">Asesorías</a></li>
-                <li><a href="#contacto" class="btn btn-primary">Contacto</a></li>
+                <li><a href="#contacto" class="btn btn-primary btn-nav-cta">Agendar Diagnóstico</a></li>
             </ul>
         </div>
     </nav>
@@ -45,7 +48,7 @@
     <section id="inicio" class="hero section">
         <div class="container hero-content">
             <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-                <h1 class="gradient-text" style="line-height: 1.2;">Libere a sus mejores abogados de la carga operativa.
+                <h1 class="gradient-text" id="hero-title" style="line-height: 1.2;">Libere a sus mejores abogados de la carga operativa.
                 </h1>
                 <p
                     style="color: #e0e0e0; text-shadow: 0 2px 4px rgba(0,0,0,0.5); font-size: 1.25rem; margin-bottom: 35px; line-height: 1.6;">
@@ -589,27 +592,42 @@
             <p class="section-subtitle text-center" data-aos="fade-up" data-aos-delay="100">Transición rápida, segura y
                 sin fricciones para tu equipo.</p>
 
-            <div class="stats-grid" style="margin-bottom: 30px;">
-                <div class="stat-card glass-panel fade-up" data-aos="zoom-in" data-aos-delay="100">
-                    <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"><i
-                            class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>Paso 1: Consultoría</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Analizamos tus flujos de trabajo actuales y
-                        detectamos los cuellos de botella exactos.</p>
+            <div class="timeline-container">
+                <div class="timeline-line">
+                    <div class="timeline-progress" id="timeline-progress"></div>
                 </div>
-                <div class="stat-card glass-panel fade-up delay-1" data-aos="zoom-in" data-aos-delay="250">
-                    <div style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;"><i
-                            class="fa-solid fa-microchip"></i></div>
-                    <h3>Paso 2: Implementación</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Adaptamos y conectamos nuestros agentes de IA
-                        a tus herramientas en tiempo récord.</p>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div class="timeline-text">
+                            <h3>Paso 1: Consultoría</h3>
+                            <p>Analizamos tus flujos de trabajo actuales y detectamos los cuellos de botella exactos mediante una auditoría técnica.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-card glass-panel fade-up delay-2" data-aos="zoom-in" data-aos-delay="400">
-                    <div style="font-size: 2.5rem; color: #ecc94b; margin-bottom: 15px;"><i
-                            class="fa-solid fa-rocket"></i></div>
-                    <h3>Paso 3: Optimización</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Acompañamiento y ajuste fino para garantizar
-                        la máxima curva de eficiencia de tu equipo.</p>
+
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="timeline-text">
+                            <h3>Paso 2: Implementación</h3>
+                            <p>Adaptamos y conectamos nuestros agentes de IA a tus herramientas (WhatsApp, Google, CRM) en tiempo récord.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="timeline-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <div class="timeline-text">
+                            <h3>Paso 3: Optimización</h3>
+                            <p>Acompañamiento y ajuste fino para garantizar la máxima curva de eficiencia y rentabilidad de tu equipo.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -706,6 +724,29 @@
                             <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">* Estimación basada en costos promedio de honorarios senior en Colombia y reducción operativa del 90%.</p>
                         </div>
                     </div>
+                    
+                    <!-- Gráfico ROI (Punto 6) -->
+                    <div class="roi-chart-container" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px;">
+                        <h4 class="text-center" style="margin-bottom: 25px; color: var(--text-muted);">Impacto Visual del Ahorro</h4>
+                        <div class="roi-chart">
+                            <div class="chart-column">
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar current-cost" id="bar-current">
+                                        <span class="bar-value" id="val-current">$0</span>
+                                    </div>
+                                </div>
+                                <span class="chart-label">Costo Actual Mensual</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar-wrapper">
+                                    <div class="chart-bar floovu-cost" id="bar-floovu">
+                                        <span class="bar-value" id="val-floovu">$0</span>
+                                    </div>
+                                </div>
+                                <span class="chart-label">Costo con Floovu</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -736,13 +777,17 @@
                     <div class="flow-step highlight-step">
                         <div class="flow-icon"><i class="fa-solid fa-microchip"></i></div>
                         <p>Aislamiento Total</p>
-                        <span class="flow-badge">AES-256 + SSL</span>
+                        <span class="flow-badge tooltip-trigger">AES-256 + SSL
+                            <span class="tooltip-box">Cifrado de máxima seguridad clínica. Sus archivos están protegidos como una bóveda bancaria.</span>
+                        </span>
                     </div>
                     <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     <div class="flow-step">
                         <div class="flow-icon"><i class="fa-solid fa-user-secret"></i></div>
                         <p>Privacidad Senior</p>
-                        <span class="flow-badge">Habeas Data (1581)</span>
+                        <span class="flow-badge tooltip-trigger">Habeas Data (1581)
+                            <span class="tooltip-box">Ley colombiana. Garantiza el secreto profesional legal y la privacidad de sus clientes.</span>
+                        </span>
                     </div>
                 </div>
 
@@ -831,7 +876,7 @@
                     <h4 style="font-size: 1.4rem; margin: 0 0 5px;">Canal de Atención Directa</h4>
                     <p style="font-size: 1.8rem; font-weight: 800; margin: 0 0 25px; color: #fff;">+57 323 835 4169</p>
                     <!-- Punto 12: WhatsApp Inteligente -->
-                    <a href="https://wa.me/573238354169?text=Hola%20Floovu,%20vengo%20de%20la%20web.%20Me%20interesa%20el%20Plan%20PRO%20v8%20para%20mi%20despacho.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn btn-primary btn-whatsapp-main"
+                    <a href="https://wa.me/573238354169?text=Hola%20Floovu,%20vengo%20de%20la%20web.%20Me%20interesa%20el%20Plan%20PRO%20v8%20para%20mi%20despacho.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn btn-primary btn-whatsapp-main pulse-whatsapp-btn"
                         style="width: 100%; background: #25D366; border-color: #25D366; box-shadow: 0 8px 25px rgba(37,211,102,0.3); font-size: 1.2rem; padding: 18px;">
                         Iniciar Chat por WhatsApp <i class="fa-brands fa-whatsapp" style="margin-left: 8px;"></i></a>
                 </div>

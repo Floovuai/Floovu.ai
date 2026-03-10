@@ -1843,3 +1843,327 @@ a {
     }
 }
 
+/* --- ETAPA 1: MEJORAS DE UX --- */
+
+/* 1. Tooltips Interactivos */
+.tooltip-trigger {
+    position: relative;
+    cursor: help;
+    display: inline-block;
+}
+
+.tooltip-box {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgba(10, 15, 30, 0.95);
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 12px;
+    position: absolute;
+    z-index: 1001;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px var(--glow-cyan);
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--primary) transparent transparent transparent;
+}
+
+.tooltip-trigger:hover .tooltip-box,
+.tooltip-trigger:active .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* 2. Menú Hamburguesa Móvil */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 1001;
+    transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(5, 5, 8, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(20px);
+        border-left: 1px solid var(--glass-border);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
+        font-family: 'Outfit', sans-serif;
+    }
+}
+
+/* 3. Pulso Visual (Ripple) WhatsApp */
+.pulse-whatsapp-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.pulse-whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #25D366;
+    border-radius: 50px;
+    z-index: -1;
+    animation: pulse-wave 2s infinite;
+    opacity: 0.6;
+}
+
+@keyframes pulse-wave {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+    }
+    100% {
+        width: 115%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+
+/* --- ETAPA 2: LÍNEA DE TIEMPO Y STICKY --- */
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* Animado por JS */
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    box-shadow: 0 0 20px var(--primary);
+    transition: height 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    width: 50%;
+}
+
+.timeline-item:nth-child(even) {
+    left: 0;
+    padding-right: 50px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 50%;
+    padding-left: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-dark);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.timeline-item.active .timeline-dot {
+    background: var(--primary);
+    border-color: #fff;
+    box-shadow: 0 0 15px var(--primary);
+    transform: scale(1.2);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.timeline-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    opacity: 0.5;
+    transition: 0.4s ease;
+}
+
+.timeline-item.active .timeline-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.timeline-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.timeline-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+    }
+    .timeline-dot {
+        left: 10px !important;
+    }
+}
+
+/* Navbar Scrolled state for Sticky effect */
+.navbar.scrolled .btn-nav-cta {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+/* --- ETAPA 3: GRÁFICO ROI --- */
+
+.roi-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 250px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.chart-bar-wrapper {
+    width: 80px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-bar {
+    width: 100%;
+    height: 0%; /* Animado por JS */
+    transition: height 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    position: relative;
+}
+
+.current-cost {
+    background: linear-gradient(to top, #ff6b6b, #ee5253);
+    box-shadow: 0 0 15px rgba(238, 82, 83, 0.4);
+}
+
+.floovu-cost {
+    background: linear-gradient(to top, #48bb78, #38a169);
+    box-shadow: 0 0 15px rgba(72, 187, 120, 0.4);
+}
+
+.bar-value {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.chart-label {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-weight: 600;
+}
+

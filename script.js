@@ -41,11 +41,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(10, 10, 15, 0.9)';
             navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            navbar.classList.add('scrolled');
         } else {
             navbar.style.background = 'rgba(10, 10, 15, 0.7)';
             navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
     });
+
+    // --- ETAPA 2: LÓGICA DE TIMELINE AL HACER SCROLL ---
+    const timelineProgress = document.getElementById('timeline-progress');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineContainer = document.querySelector('.timeline-container');
+
+    function updateTimeline() {
+        if (!timelineContainer || !timelineProgress) return;
+
+        const containerRect = timelineContainer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calcular cuánto del contenedor ha pasado por la pantalla
+        let progress = (windowHeight / 2 - containerRect.top) / containerRect.height;
+        progress = Math.max(0, Math.min(progress, 1));
+        
+        timelineProgress.style.height = (progress * 100) + '%';
+
+        timelineItems.forEach((item, index) => {
+            const itemRect = item.getBoundingClientRect();
+            // Activar si el item está cerca del centro de la pantalla
+            if (itemRect.top < windowHeight * 0.6) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateTimeline);
+    updateTimeline(); // Inicializar
 
     // --- PUNTO 11: SOCIAL PROOF DINÁMICO ---
     const socialProof = document.getElementById('social-proof');
@@ -99,27 +132,61 @@ document.addEventListener('DOMContentLoaded', () => {
         const hourlyRate = 120000;
         const weeksPerMonth = 4.3;
         
-        // Cálculo de horas totales al mes
         const totalHoursMonth = lawyers * hoursPerWeek * weeksPerMonth;
-        
-        // Floovu ahorra el 90% del tiempo
         const savingsEfficiency = 0.9;
         const hoursSaved = totalHoursMonth * savingsEfficiency;
         const moneySaved = hoursSaved * hourlyRate;
+        
+        const currentCost = totalHoursMonth * hourlyRate;
+        const floovuCost = currentCost - moneySaved;
 
         // Actualizar UI
         lawyersVal.innerText = lawyers;
         hoursVal.innerText = hoursPerWeek + 'h';
-        
-        // Formatear moneda (COP)
         savingsAmount.innerText = '$' + Math.round(moneySaved).toLocaleString('es-CO');
         freedHours.innerText = Math.round(hoursSaved) + ' horas';
+
+        // Actualizar Gráfico (Punto 6)
+        const barCurrent = document.getElementById('bar-current');
+        const barFloovu = document.getElementById('bar-floovu');
+        const valCurrent = document.getElementById('val-current');
+        const valFloovu = document.getElementById('val-floovu');
+
+        if (barCurrent && barFloovu) {
+            barCurrent.style.height = '100%';
+            barFloovu.style.height = (floovuCost / currentCost * 100) + '%';
+            
+            valCurrent.innerText = '$' + (Math.round(currentCost / 1000000 * 10) / 10) + 'M';
+            valFloovu.innerText = '$' + (Math.round(floovuCost / 1000000 * 10) / 10) + 'M';
+        }
     }
 
-    if (lawyersSlider && hoursSlider) {
-        lawyersSlider.addEventListener('input', updateROI);
-        hoursSlider.addEventListener('input', updateROI);
-        updateROI(); // Inicializar
+    // --- ETAPA 1: MENÚ MÓVIL ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Cambiar icono entre hamburguesa y X
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
     }
 });
 
@@ -128,7 +195,17 @@ function filterProfile(type) {
     const buttons = document.querySelectorAll('.profile-btn');
     const testimonials = document.querySelectorAll('.testimonial-card');
     const products = document.querySelectorAll('.product-card');
+    const heroTitle = document.getElementById('hero-title');
     
+    // Cambiar texto del título (Punto 7)
+    if (heroTitle) {
+        if (type === 'legal') {
+            heroTitle.innerText = "La IA Senior que blinda tus términos legales";
+        } else if (type === 'realestate') {
+            heroTitle.innerText = "La IA que evalúa tus activos y automatiza cierres";
+        }
+    }
+
     // Cambiar estado de botones
     buttons.forEach(btn => {
         if (btn.getAttribute('onclick').includes(type)) {
