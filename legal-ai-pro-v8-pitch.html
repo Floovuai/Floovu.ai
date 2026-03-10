@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Floovu Legal AI - PRO v8 | Propuesta Comercial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1121;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+            padding: 15mm 20mm;
+            color: #e2e8f0;
+            background-image:
+                radial-gradient(circle at 80% -20%, rgba(79, 70, 229, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at -20% 120%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            page-break-after: always;
+            break-after: page;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 8mm;
+            margin-bottom: 10mm;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .badge-pro {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            font-weight: 950;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 14px;
+            color: #94a3b8;
+            max-width: 95%;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .product-showcase {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .product-img {
+            width: 175px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .features-list {
+            flex: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            color: #38bdf8;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .feature-text b {
+            color: #f8fafc;
+            display: block;
+            font-size: 14px;
+        }
+
+        .feature-text span {
+            color: #94a3b8;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-left: 5px solid #f59e0b;
+            padding-left: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: auto;
+        }
+
+        .comparison-table th {
+            padding: 14px 10px;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .comparison-table th.col-base {
+            background: #1e293b;
+            color: #94a3b8;
+        }
+
+        .comparison-table th.col-v1 {
+            background: #334155;
+            color: #cbd5e1;
+        }
+
+        .comparison-table th.col-pro {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: #ffffff;
+            border-bottom: 3px solid #f59e0b;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            line-height: 1.4;
+            vertical-align: middle;
+        }
+
+        .td-feature {
+            background: #0f172a;
+            color: #f8fafc;
+            font-weight: 700;
+            width: 25%;
+        }
+
+        .td-base {
+            background: rgba(30, 41, 59, 0.4);
+            color: #94a3b8;
+            width: 25%;
+            text-align: center;
+        }
+
+        .td-v1 {
+            background: rgba(51, 65, 85, 0.4);
+            color: #cbd5e1;
+            width: 25%;
+            text-align: center;
+        }
+
+        .td-pro {
+            background: rgba(49, 46, 129, 0.2);
+            color: #ffffff;
+            font-weight: 600;
+            width: 25%;
+            text-align: center;
+            border-left: 1px solid rgba(245, 158, 11, 0.2);
+            border-right: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .check-no {
+            color: #ef4444;
+            font-size: 16px;
+        }
+
+        .check-yes {
+            color: #10b981;
+            font-size: 16px;
+        }
+
+        .check-pro {
+            color: #f59e0b;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 15px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .metric-card .label {
+            font-size: 9px;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .pricing-section {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0) 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .pricing-card {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-card.main {
+            background: linear-gradient(165deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card h4 {
+            color: #f59e0b;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .pricing-price {
+            font-size: 34px;
+            font-weight: 950;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price span {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .pricing-desc {
+            font-size: 11px;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+
+        .referral-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px dashed #10b981;
+            border-radius: 14px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 5mm;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 10px;
+            color: #475569;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .a4-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== PÁGINA 1: PRESENTACIÓN Y FEATURES ==================== -->
+    <div class="a4-container">
+
+        <div class="header">
+            <img src="file:///c:/Users/chval/OneDrive/Escritorio/FLOOVU%20AI/LOGO%20FLOOVU.jpg" alt="Floovu Logo"
+                class="logo-img" />
+            <span class="badge-pro">Legal Ai PRO v8</span>
+        </div>
+
+        <div class="hero">
+            <h1>Socio Director Virtual & <span>Litigio Estratégico</span></h1>
+            <p>La versión <b>PRO v8</b> de Floovu Legal Ai no es solo un asistente; es la máxima autoridad jurídica
+                digital para tu despacho. Diseñado específicamente para el derecho procesal colombiano, bajo una
+                arquitectura de <b>Inteligencia Artificial Senior</b> de alta capacidad y protocolos de análisis
+                ministerial.</p>
+        </div>
+
+        <div class="product-showcase">
+            <img src="file:///C:/Users/chval/.gemini/antigravity/brain/231a7744-9ad7-48cc-a157-bf497cc1a83b/floovu_legal_ai_pro_v8_packaging_v2_1773127050082.png"
+                alt="Floovu Legal Ai PRO v8" class="product-img" />
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">🧠</span>
+                    <div class="feature-text">
+                        <b>Cerebro Estratégico v8 (IA Senior)</b>
+                        <span>Análisis profundo de fondo utilizando IA de escala empresarial para litigio de alto
+                            nivel.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📑</span>
+                    <div class="feature-text">
+                        <b>Protocolo IRAC Avanzado</b>
+                        <span>Estructura jurídica profesional: Hechos, Normas, Aplicación y Hoja de Ruta Táctica.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚖️</span>
+                    <div class="feature-text">
+                        <b>Cálculo de Términos (CGP/CPACA)</b>
+                        <span>Algoritmo inteligente que aplica plazos procesales según la ley vigente en
+                            Colombia.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📡</span>
+                    <div class="feature-text">
+                        <b>Vigilancia Diaria Ministerial</b>
+                        <span>Escaneo automático de leyes, decretos y sentencias unificadoras para
+                            auto-aprendizaje.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📧</span>
+                    <div class="feature-text">
+                        <b>Enrutamiento Inteligente a Responsables</b>
+                        <span>Identificación automática del abogado asignado y entrega de 'Hoja de Ruta' personalizada
+                            vía email para acción inmediata.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="value">98.4%</div>
+                <div class="label">Precisión IRAC</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">-$150k</div>
+                <div class="label">Ahorro / Documento</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">100%</div>
+                <div class="label">Auditoría Procesal</div>
+            </div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; border: 1px solid rgba(56,189,248,0.1);">
+            <h3 style="color: #ffffff; font-size: 16px; margin: 0 0 10px 0;">🛡️ Blindaje Jurídico Floovu</h3>
+            <p style="font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 0;">
+                A diferencia de otras IAs, Floovu PRO v8 consulta una <b>Memoria Local de Precedentes</b> propia de tu
+                despacho, asegurando que la estrategia del caso sea coherente con tu historial, manteniendo el tono
+                ejecutivo y técnico-jurídico orientado a la victoria.
+            </p>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            © 2026 Floovu Automation AI • www.floovu.com • Página 01
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 2: COMPARATIVA ==================== -->
+    <div class="a4-container">
+        <div class="header">
+            <img src="file:///c:/Users/chval/OneDrive/Escritorio/FLOOVU%20AI/LOGO%20FLOOVU.jpg" alt="Floovu Logo"
+                class="logo-img" />
+            <span class="badge-pro">Análisis de Capacidades</span>
+        </div>
+
+        <h2 class="section-title">Análisis Comparativo de Capacidad</h2>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">Evaluación de eficiencia
+            operativa entre el paradigma tradicional, la versión estándar y la versión <b>PRO v8</b>.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="td-feature" style="background: transparent;">Capacidad</th>
+                    <th class="col-base">Tradicional</th>
+                    <th class="col-v1">Legal AI Base</th>
+                    <th class="col-pro">Legal Ai PRO V8</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-feature">Modelo de Lenguaje</td>
+                    <td class="td-base">Cerebro Humano</td>
+                    <td class="td-v1">Llama 8B</td>
+                    <td class="td-pro">IA Senior</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Cálculo de Plazos</td>
+                    <td class="td-base">Manual / Riesgo</td>
+                    <td class="td-v1">Fechas PDF</td>
+                    <td class="td-pro">Tablas CGP/CPACA</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Actualización Legal</td>
+                    <td class="td-base">Suscripciones</td>
+                    <td class="td-v1">Manual</td>
+                    <td class="td-pro">API Datos Abiertos</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Análisis de Nulidades</td>
+                    <td class="td-base"><span class="check-no">✖</span> No</td>
+                    <td class="td-v1">Básico</td>
+                    <td class="td-pro">Deep IRAC</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Memoria Precedentes</td>
+                    <td class="td-base"><span class="check-no">✖</span> No</td>
+                    <td class="td-v1"><span class="check-no">✖</span> No</td>
+                    <td class="td-pro">Vectorial Local</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Uso de OCR Avanzado</td>
+                    <td class="td-base"><span class="check-no">✖</span> No</td>
+                    <td class="td-v1">Estándar</td>
+                    <td class="td-pro">Forense Digital</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Asignación de Casos</td>
+                    <td class="td-base">Manual / Olvidos</td>
+                    <td class="td-v1">Bandeja General</td>
+                    <td class="td-pro">Ruteo por Abogado</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Dashboard ROI/COP</td>
+                    <td class="td-base"><span class="check-no">✖</span> No</td>
+                    <td class="td-v1">HTML</td>
+                    <td class="td-pro">HTML</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div
+            style="margin-top: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 16px;">
+            <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6; margin: 0;">
+                <b style="color: #f59e0b;">Nota de Desempeño:</b> Los resultados de la versión PRO v8 están respaldados
+                por una tasa de precisión del 98.4% en la identificación de nulidades y una reducción del 90% en el
+                tiempo de procesamiento de documentos densos comparado con el proceso tradicional.
+            </p>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            © 2026 Floovu Automation AI • www.floovu.com • Página 02
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 3: INVERSIÓN ==================== -->
+    <div class="a4-container">
+        <div class="header">
+            <img src="file:///c:/Users/chval/OneDrive/Escritorio/FLOOVU%20AI/LOGO%20FLOOVU.jpg" alt="Floovu Logo"
+                class="logo-img" />
+            <span class="badge-pro">Propuesta Económica</span>
+        </div>
+
+        <h2 class="section-title" style="border-left-color: #34d399;">Inversión Legal Ai PRO v8</h2>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">Nuestra estructura de
+            inversión está diseñada para escalar con su despacho, garantizando un retorno de inversión (ROI) desde el
+            primer mes de operación.</p>
+
+        <div class="pricing-section">
+            <div class="pricing-grid">
+                <div class="pricing-card main">
+                    <h4>Implementación & Despliegue</h4>
+                    <div class="pricing-price">$2.800.000 <span>COP</span></div>
+                    <p class="pricing-desc">
+                        Pago único. Configuración de arquitectura v8, integración con Gmail, Sheets, Calendar y
+                        despliegue del motor IA en tus propios procesos.
+                    </p>
+                </div>
+                <div class="pricing-card main" style="border-width: 3px;">
+                    <h4>Mantenimiento Mensual</h4>
+                    <div class="pricing-price">$600.000 <span>COP/mes</span></div>
+                    <p class="pricing-desc">
+                        Mantenimiento del motor IA, vigilancia diaria automatizada de fuentes gubernamentales y soporte
+                        estratégico ininterrumpido.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="referral-box" style="margin-bottom: 30px;">
+            <div style="font-size: 28px;">🤝</div>
+            <div>
+                <h4 style="color: #10b981; font-size: 14px; margin: 0 0 4px 0;">Referidos Premium (Mensualidad $0)</h4>
+                <p style="color: #94a3b8; font-size: 12px; margin: 0;">Por cada despacho referido que implemente la v8,
+                    <b>te reintegramos el 100% de tu mensualidad</b> ($600.000 COP) del mes siguiente.
+                </p>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #1e1b4b, #0f172a); border-radius: 20px; padding: 35px; text-align: center; border: 1px solid #312e81; margin-top: auto; margin-bottom: 20px;">
+            <h2 style="color: #ffffff; font-size: 22px; margin-bottom: 12px;">¿Listo para dominar la práctica legal
+                moderna?</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px;">Reduzca su carga operativa y multiplique su
+                capacidad de litigio hoy mismo.</p>
+            <a href="file:///c:/Users/chval/.gemini/antigravity/scratch/floovu-landing-page/index.html#contacto"
+                style="display:inline-block; padding: 14px 40px; background: #f59e0b; color: #000; font-weight: 900; border-radius: 50px; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2); text-decoration: none;">
+                Solicitar Despliegue v8 PRO</a>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            Floovu Legal AI - PRO v8.0 • Socio Director Virtual • Colombia 2026 • Página 03
+        </div>
+    </div>
+
+</body>
+
+</html>
