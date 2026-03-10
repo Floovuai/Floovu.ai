@@ -355,12 +355,14 @@ a {
     transition: var(--transition);
 }
 
-.product-card.legal-card {
-    border-color: rgba(0, 136, 255, 0.3);
-}
-
 .product-card.real-estate-card {
     border-color: rgba(0, 229, 255, 0.3);
+}
+
+.product-card.premium-card {
+    border-color: #f59e0b;
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.08) 0%, rgba(10, 10, 15, 0) 100%);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
 }
 
 .product-card:hover {
@@ -374,6 +376,11 @@ a {
 
 .product-card.real-estate-card:hover {
     border-color: rgba(0, 229, 255, 0.6);
+}
+
+.product-card.premium-card:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 15px 45px rgba(245, 158, 11, 0.3);
 }
 
 .product-image-container {
@@ -413,6 +420,10 @@ a {
 
 .blue-glow {
     background: rgba(93, 173, 226, 0.3);
+}
+
+.gold-glow {
+    background: rgba(245, 158, 11, 0.3);
 }
 
 .product-info {
@@ -499,13 +510,18 @@ a {
     background: var(--primary);
 }
 
-.border-blue {
-    border-color: var(--secondary);
-    color: var(--text-main);
-}
-
 .border-blue:hover {
     background: var(--secondary);
+}
+
+.border-gold {
+    border-color: #f59e0b;
+    color: #fff;
+}
+
+.border-gold:hover {
+    background: #f59e0b;
+    color: #000;
 }
 
 /* Contact Section */
