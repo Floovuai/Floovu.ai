@@ -793,7 +793,7 @@ a {
     }
 }
 
-/* --- SECCIONES ESTRAT√âGICAS (AUDITOR√çA) --- */
+/* --- SECCIONES ESTRATEGICAS (AUDITOR√çA) --- */
 
 /* Impact Badges Redesign */
 .impact-grid {
@@ -1157,7 +1157,7 @@ a {
         padding: 25px 15px;
     }
 }
-/* --- NUEVAS SECCIONES ESTRAT…GICAS (CONVERSI”N V2) --- */
+/* --- NUEVAS SECCIONES ESTRATEGICAS (CONVERSION V2) --- */
 
 /* Profile Selector (Efecto Espejo) */
 .profile-selector {
@@ -1171,50 +1171,77 @@ a {
 }
 
 .profile-btn {
-    padding: 30px 40px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 35px 30px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.06);
     color: #fff;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    width: 320px;
+    gap: 18px;
+    width: 340px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.profile-btn:hover::before {
+    opacity: 1;
 }
 
 .profile-btn i {
-    font-size: 2.5rem;
-    color: var(--text-muted);
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, var(--text-muted), #64748b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: var(--transition);
 }
 
 .profile-btn h4 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin: 0;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .profile-btn p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
     margin: 0;
+    line-height: 1.4;
 }
 
 .profile-btn.active {
-    background: rgba(0, 229, 255, 0.08);
-    border-color: var(--primary);
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.2);
-    transform: translateY(-8px);
+    background: linear-gradient(145deg, rgba(0, 229, 255, 0.1), rgba(0, 229, 255, 0.02));
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 229, 255, 0.15);
+    transform: translateY(-10px) scale(1.02);
 }
 
 .profile-btn.active i {
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     transform: scale(1.1);
 }
 
@@ -1228,29 +1255,30 @@ a {
     transform: translateY(-3px);
 }
 
-/* Costo de InacciÛn (COI) */
+/* Costo de InacciÔøΩn (COI) */
 .coi-section {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.07), transparent);
-    border: 1px solid rgba(255, 107, 107, 0.2);
-    border-radius: 35px;
-    padding: 70px 50px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.08), rgba(10, 10, 15, 0.2));
+    border: 1px solid rgba(255, 107, 107, 0.25);
+    border-radius: 40px;
+    padding: 80px 60px;
     margin: 100px 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.05);
+    box-shadow: 0 30px 60px rgba(255, 107, 107, 0.08);
 }
 
 .coi-section::after {
-    content: "\f071";
-    font-family: "Font Awesome 6 Free";
+    content: '\f071';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    top: -30px;
-    right: -30px;
-    font-size: 12rem;
-    opacity: 0.03;
+    top: -20px;
+    right: -20px;
+    font-size: 15rem;
+    opacity: 0.02;
     transform: rotate(15deg);
     color: #ff6b6b;
+    pointer-events: none;
 }
 
 .coi-grid {
@@ -1492,37 +1520,48 @@ a {
 /* Math Efficiency Table (ROI) */
 .math-table {
     margin: 50px auto 0;
-    max-width: 800px;
-    border-radius: 20px;
+    max-width: 850px;
+    border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.01);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
 }
 
 .math-row {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 20px 30px;
+    padding: 25px 40px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+}
+
+.math-row:hover {
+    background: rgba(255,255,255,0.03);
 }
 
 .math-row:last-child {
     border-bottom: none;
-    background: rgba(16, 185, 129, 0.08);
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
     color: #10b981;
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    border-top: 2px solid rgba(16, 185, 129, 0.3);
 }
 
 .math-label {
-    color: var(--text-muted);
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .math-value {
     text-align: right;
-    font-weight: 700;
+    font-weight: 800;
     color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
 }
 
 .math-row:last-child .math-label,
@@ -1588,4 +1627,6 @@ a {
         max-width: none;
     }
 }
+
+
 
