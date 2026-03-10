@@ -61,7 +61,7 @@ a {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 .text-center {
@@ -783,13 +783,14 @@ a {
 }
 
 .impact-percent {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1;
+    font-size: 5rem;
+    font-weight: 950;
+    line-height: 0.9;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-family: 'Outfit', sans-serif;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
+    text-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
 }
 
 .impact-card p {
