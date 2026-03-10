@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // Iniciar rotación cada 15 segundos
-    setInterval(showSocialProof, 15000);
-    setTimeout(showSocialProof, 3000); // Primera vez después de 3s
+    // Iniciar rotación cada 60 segundos (según sugerencia del usuario)
+    setInterval(showSocialProof, 60000);
+    setTimeout(showSocialProof, 5000); // Primera vez después de 5s
 });
 
 // --- PUNTO 7: EFECTO ESPEJO (FILTER PROFILE) ---
