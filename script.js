@@ -161,6 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (lawyersSlider && hoursSlider) {
+        lawyersSlider.addEventListener('input', updateROI);
+        hoursSlider.addEventListener('input', updateROI);
+        updateROI(); // Inicializar
+    }
+
     // --- ETAPA 1: MENÚ MÓVIL ---
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('nav-links');
