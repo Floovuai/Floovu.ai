@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Floovu Cognitive Agent | Propuesta Comercial</title>
+    <link rel="icon" type="image/png" href="images/favicon.png?v=2">
+    <link rel="shortcut icon" href="images/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="images/favicon.png?v=2">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #050508;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            background: #0a0a0f;
+            position: relative;
+            overflow: hidden;
+            padding: 15mm 20mm;
+            color: #e2e8f0;
+            background-image:
+                radial-gradient(circle at 80% -20%, rgba(79, 209, 197, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at -20% 120%, rgba(44, 122, 123, 0.1) 0%, transparent 50%);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            page-break-after: always;
+            break-after: page;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 8mm;
+            margin-bottom: 10mm;
+        }
+
+        .logo-main-img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .badge-pro {
+            background: linear-gradient(135deg, #4FD1C5, #2C7A7B);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(79, 209, 197, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            font-weight: 950;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #4FD1C5, #81e6d9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 14px;
+            color: #94a3b8;
+            max-width: 95%;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .product-showcase {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .product-img {
+            width: 175px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .features-list {
+            flex: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            color: #4FD1C5;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .feature-text b {
+            color: #f8fafc;
+            display: block;
+            font-size: 14px;
+        }
+
+        .feature-text span {
+            color: #94a3b8;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-left: 5px solid #4FD1C5;
+            padding-left: 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: auto;
+        }
+
+        .comparison-table th {
+            padding: 14px 10px;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .comparison-table th.col-base {
+            background: #1e293b;
+            color: #94a3b8;
+        }
+
+        .comparison-table th.col-pro {
+            background: linear-gradient(135deg, #234e52, #285e61);
+            color: #ffffff;
+            border-bottom: 3px solid #4FD1C5;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            line-height: 1.4;
+            vertical-align: middle;
+        }
+
+        .td-feature {
+            background: #0f172a;
+            color: #f8fafc;
+            font-weight: 700;
+            width: 30%;
+        }
+
+        .td-base {
+            background: rgba(30, 41, 59, 0.4);
+            color: #94a3b8;
+            width: 35%;
+            text-align: center;
+        }
+
+        .td-pro {
+            background: rgba(35, 78, 82, 0.2);
+            color: #ffffff;
+            font-weight: 600;
+            width: 35%;
+            text-align: center;
+            border-left: 1px solid rgba(79, 209, 197, 0.2);
+            border-right: 1px solid rgba(79, 209, 197, 0.2);
+        }
+
+        .check-no {
+            color: #ef4444;
+            font-size: 16px;
+        }
+
+        .check-yes {
+            color: #10b981;
+            font-size: 16px;
+        }
+
+        .check-pro {
+            color: #4FD1C5;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 15px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .metric-card .label {
+            font-size: 9px;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .pricing-section {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0) 100%);
+            border: 2px solid #4FD1C5;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .pricing-card {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(79, 209, 197, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-card.main {
+            background: linear-gradient(165deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card h4 {
+            color: #4FD1C5;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .pricing-price {
+            font-size: 34px;
+            font-weight: 950;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price span {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .pricing-desc {
+            font-size: 11px;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+
+        .referral-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px dashed #10b981;
+            border-radius: 14px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 5mm;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 10px;
+            color: #475569;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .a4-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== PÁGINA 1: PRESENTACIÓN Y FEATURES ==================== -->
+    <div class="a4-container">
+
+        <!-- Botón Volver Flotante -->
+        <a href="index.html"
+            style="position: fixed; top: 20px; left: 20px; z-index: 1000; background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); color: #fff; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s;"
+            onmouseover="this.style.background='rgba(44, 122, 123, 0.4)'; this.style.borderColor='rgba(79, 209, 197, 0.4)';"
+            onmouseout="this.style.background='rgba(30, 41, 59, 0.8)'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+            <span style="font-size: 16px;">←</span> Volver a Floovu.ai
+        </a>
+
+        <div class="header">
+            <img src="images/logo.png" alt="Floovu AI" class="logo-main-img" style="height: 40px; width: auto;">
+            <span class="badge-pro">Cognitive Agent v2.0</span>
+        </div>
+
+        <div class="hero">
+            <h1>Ventas IA con <span>Memoria Activa</span></h1>
+            <p>Floovu Cognitive Agent no es un chatbot estático rígido con menús; es una <b>Inteligencia Dinámica de Auto-Aprendizaje</b>. Aprende de cada interacción, recuerda preferencias de los clientes y cierra ventas 24/7 en WhatsApp, integrando los pedidos directamente a sus bases de datos sin error humano.</p>
+        </div>
+
+        <div class="product-showcase">
+            <img src="images/cognitive-agent.jpg" alt="Floovu Cognitive Agent" class="product-img" />
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">🧠</span>
+                    <div class="feature-text">
+                        <b>Memoria Cognitiva de Auto-Aprendizaje</b>
+                        <span>Detecta gustos, alergias y direcciones, y las almacena para interacciones futuras personalizadas.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📱</span>
+                    <div class="feature-text">
+                        <b>Integración Nativa WhatsApp & n8n</b>
+                        <span>Operación ininterrumpida que registra datos directamente en Google Sheets o su CRM.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛒</span>
+                    <div class="feature-text">
+                        <b>Control de Inventario Inyectado</b>
+                        <span>Revisa el stock en tiempo real y sugiere productos alternativos si el cliente pide algo agotado.</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💳</span>
+                    <div class="feature-text">
+                        <b>Gestión Final y Cierre de Pagos</b>
+                        <span>Guía al usuario natural y humanamente desde el saludo hasta la confirmación del comprobante de transferencia.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="value">0ms</div>
+                <div class="label">Tiempo de Espera</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">100%</div>
+                <div class="label">Auto-Aprendizaje</div>
+            </div>
+            <div class="metric-card">
+                <div class="value">24/7</div>
+                <div class="label">Atención Ininterrumpida</div>
+            </div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; border: 1px solid rgba(79, 209, 197, 0.2);">
+            <h3 style="color: #ffffff; font-size: 16px; margin: 0 0 10px 0;">🛡️ Escalamiento sin límites</h3>
+            <p style="font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 0;">
+                Mientras un equipo humano se satura en horas pico y deja clientes esperando, el Cognitive Agent puede atender a un cliente o a mil simultáneamente, manteniendo la misma calidez, personalización y exactitud en el pedido.
+            </p>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            © 2026 Floovu Automation AI • www.floovu.com • Página 01
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 2: COMPARATIVA ==================== -->
+    <div class="a4-container">
+        <div class="header">
+            <img src="images/logo.png" alt="Floovu AI" class="logo-main-img" style="height: 60px; width: auto;">
+            <span class="badge-pro">Análisis de Integración</span>
+        </div>
+
+        <h2 class="section-title">Automatización Tradicional vs Cognitive Agent</h2>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">Evaluación de rendimiento y adaptabilidad empresarial comparando modelos de WhatsApp convencionales con el nuevo Cognitive Agent v2.0.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="td-feature" style="background: transparent;">Característica Operativa</th>
+                    <th class="col-base">Chatbot Tradicional</th>
+                    <th class="col-pro">Floovu Cognitive Agent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-feature">Capacidad de Memoria</td>
+                    <td class="td-base"><span class="check-no">✖</span> Se reinicia en cada chat</td>
+                    <td class="td-pro"><span class="check-pro">✔</span> Recuerda histórico por cliente</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Estructura Conversacional</td>
+                    <td class="td-base">Menús Rígidos (Presione 1 o 2)</td>
+                    <td class="td-pro">Diálogo Natural Humanizado</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Evolución de Datos</td>
+                    <td class="td-base"><span class="check-no">✖</span> Requiere re-programación</td>
+                    <td class="td-pro"><span class="check-pro">✔</span> Auto-aprende constantemente</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Consulta de Inventario</td>
+                    <td class="td-base">Depende de humanos</td>
+                    <td class="td-pro">Validación API Sheets/CRM</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Orientación al Cierre</td>
+                    <td class="td-base">Informativo ("Aquí están los precios")</td>
+                    <td class="td-pro">Vendedor ("¿Te agrego esta opción que te gusta?")</td>
+                </tr>
+                <tr>
+                    <td class="td-feature">Registro de Gestión</td>
+                    <td class="td-base"><span class="check-no">✖</span> Transcripción manual humana</td>
+                    <td class="td-pro"><span class="check-pro">✔</span> Carga de Pedidos en Tiempo Real</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div
+            style="margin-top: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 16px;">
+            <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6; margin: 0;">
+                <b style="color: #4FD1C5;">Dato Crítico:</b> Empresas que migran de chatbots de menú rígido a arquitecturas NLP Cognitivas incrementan su tasa de conversión de retención de ventas en WhatsApp en un promedio de 42%, eliminando el rebote por frustración de los clientes.
+            </p>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            © 2026 Floovu Automation AI • www.floovu.com • Página 02
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 3: INVERSIÓN ==================== -->
+    <div class="a4-container">
+        <div class="header">
+            <img src="images/logo.png" alt="Floovu AI" class="logo-main-img" style="height: 60px; width: auto;">
+            <span class="badge-pro">Propuesta Económica</span>
+        </div>
+
+        <h2 class="section-title" style="border-left-color: #4FD1C5;">Inversión en el Futuro de sus Ventas</h2>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">Una parametrización eficiente de por vida, que no exige incapacidades ni dominicales, y atiende su canal comercial ininterrumpidamente recuperando clientes perdidos nocturnos.</p>
+
+        <div class="pricing-section">
+            <div class="pricing-grid">
+                <div class="pricing-card main">
+                    <h4>Implementación & Despliegue</h4>
+                    <div class="pricing-price">$2.300.000 <span>COP</span></div>
+                    <p class="pricing-desc">
+                        Pago único. Abarca toda la arquitectura, conexionado WhatsApp API, parametrización de bases de datos, n8n y diseño inicial de la "Personalidad" del bot.
+                    </p>
+                </div>
+                <div class="pricing-card main" style="border-width: 3px; border-color: #4FD1C5;">
+                    <h4>Mantenimiento Mensual</h4>
+                    <div class="pricing-price">$450.000 <span>COP/mes</span></div>
+                    <p class="pricing-desc">
+                        Actualizaciones de modelo IA, supervisión de nodos, soporte técnico prioritario, optimización de prompts y costos de servidores de procesamiento de Tokens.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="referral-box" style="margin-bottom: 30px;">
+            <div style="font-size: 28px;">🤝</div>
+            <div>
+                <h4 style="color: #10b981; font-size: 14px; margin: 0 0 4px 0;">Referidos Empresariales</h4>
+                <p style="color: #94a3b8; font-size: 12px; margin: 0;">Un producto impecable merece ser compartido. Si nos conectas con otra empresa que implemente el sistema, <b>te reintegramos el 100% de tu siguiente mensualidad</b> ($450.000 COP).
+                </p>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #1E3A3F, #0f172a); border-radius: 20px; padding: 35px; text-align: center; border: 1px solid #2C7A7B; margin-top: auto; margin-bottom: 20px;">
+            <h2 style="color: #ffffff; font-size: 22px; margin-bottom: 12px;">¿Listo para vender mientras duermes?</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 25px;">La respuesta inmediata y de calidad es la principal condición para cerrar leads en 2026. Transforma tu embudo hoy mismo.</p>
+            <a href="index.html#contacto"
+                style="display:inline-block; padding: 14px 40px; background: #4FD1C5; color: #000; font-weight: 900; border-radius: 50px; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 20px rgba(79, 209, 197, 0.2); text-decoration: none;">
+                Transformar mi Empresa con IA</a>
+        </div>
+
+        <div class="footer" style="margin-top: auto;">
+            Floovu Cognitive Agent v2.0 • IA de Auto-Aprendizaje • Colombia 2026 • Página 03
+        </div>
+    </div>
+
+</body>
+
+</html>

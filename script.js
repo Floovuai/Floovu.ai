@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function filterProfile(type) {
     const buttons = document.querySelectorAll('.profile-btn');
     const testimonials = document.querySelectorAll('.testimonial-card');
+    const products = document.querySelectorAll('.product-card');
     
     // Cambiar estado de botones
     buttons.forEach(btn => {
@@ -94,6 +95,30 @@ function filterProfile(type) {
         } else {
             btn.classList.remove('active');
         }
+    });
+
+    // Scroll suave a la sección de productos para que vean el resultado
+    const productosSection = document.getElementById('productos');
+    if (productosSection) {
+        productosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Filtrar productos
+    products.forEach(card => {
+        card.style.opacity = '0.3';
+        card.style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+            if (type === 'legal' && !card.classList.contains('profile-legal')) {
+                card.style.display = 'none';
+            } else if (type === 'realestate' && !card.classList.contains('profile-realestate')) {
+                card.style.display = 'none';
+            } else {
+                card.style.display = ''; // Restaurar display original
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            }
+        }, 300);
     });
 
     // Filtrar testimonios con animación
