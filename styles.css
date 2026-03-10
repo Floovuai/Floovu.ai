@@ -61,7 +61,7 @@ a {
 }
 
 .section {
-    padding: 25px 0;
+    padding: 10px 0;
 }
 
 .text-center {
@@ -529,6 +529,7 @@ a {
     border: 2px solid;
     text-align: center;
     width: 100%;
+    margin-top: 10px;
 }
 
 .border-green {
@@ -558,8 +559,8 @@ a {
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 20px 0;
+    gap: 20px;
+    padding: 0;
 }
 
 .contact-info h2 {
@@ -875,7 +876,7 @@ a {
 /* FAQ Section Refined */
 .faq-container {
     max-width: 900px;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
     display: grid;
     gap: 15px;
 }
