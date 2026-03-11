@@ -1674,7 +1674,7 @@ a {
 .slider-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .roi-slider {
@@ -1702,8 +1702,8 @@ a {
     font-weight: 700;
     color: var(--primary);
     font-size: 1.2rem;
-    min-width: 50px;
-    text-align: right;
+    min-width: 40px;
+    text-align: left;
 }
 
 .calc-results {
