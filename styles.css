@@ -1658,9 +1658,9 @@ a {
 /* ROI Calculator */
 .calculator-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 30px;
-    align-items: start;
+    grid-template-columns: 1fr 0.8fr 0.8fr;
+    gap: 20px;
+    align-items: center;
 }
 
 .input-group label {
@@ -1733,7 +1733,7 @@ a {
 }
 
 .result-amount {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     font-family: 'Outfit', sans-serif;
 }
@@ -1829,7 +1829,7 @@ a {
 @media (max-width: 992px) {
     .calculator-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
     }
 }
 
@@ -2107,10 +2107,9 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: 180px;
-    max-width: 500px;
+    height: 120px;
+    width: 100%;
     margin: 0 auto;
-    padding-bottom: 20px;
 }
 
 .chart-column {
@@ -2121,10 +2120,10 @@ a {
 }
 
 .chart-bar-wrapper {
-    width: 60px;
-    height: 140px;
+    width: 45px;
+    height: 100px;
     background: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
+    border-radius: 8px;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -2151,18 +2150,18 @@ a {
 
 .bar-value {
     position: absolute;
-    top: -30px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
 }
 
 .chart-label {
-    margin-top: 15px;
-    font-size: 0.85rem;
+    margin-top: 8px;
+    font-size: 0.7rem;
     color: var(--text-muted);
     text-align: center;
     font-weight: 600;

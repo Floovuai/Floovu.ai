@@ -693,19 +693,19 @@
                 </div>
 
                 <!-- ROI Calculator Widget -->
-                <div class="roi-calculator glass-panel" data-aos="fade-up" style="margin-top: 30px; padding: 25px;">
-                    <h3 class="text-center" style="font-size: 1.6rem; margin-bottom: 25px;">Calculador de Retorno de Inversión (ROI)</h3>
+                <div class="roi-calculator glass-panel" data-aos="fade-up" style="margin-top: 20px; padding: 15px 25px;">
                     <div class="calculator-grid">
                         <div class="calc-inputs">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 20px;">Calculador de ROI</h3>
                             <div class="input-group">
-                                <label>¿Cuántos abogados tiene su firma?</label>
+                                <label style="font-size: 0.9rem;">Abogados en la firma</label>
                                 <div class="slider-container">
                                     <input type="range" min="1" max="50" value="5" class="roi-slider" id="lawyers-slider">
                                     <span class="slider-value" id="lawyers-val">5</span>
                                 </div>
                             </div>
-                            <div class="input-group" style="margin-top: 20px;">
-                                <label>¿Horas/semana en lectura de expedientes por abogado?</label>
+                            <div class="input-group" style="margin-top: 15px;">
+                                <label style="font-size: 0.9rem;">Horas/semana lectura</label>
                                 <div class="slider-container">
                                     <input type="range" min="1" max="40" value="20" class="roi-slider" id="hours-slider">
                                     <span class="slider-value" id="hours-val">20h</span>
@@ -713,40 +713,38 @@
                             </div>
                         </div>
                         <div class="calc-results">
-                            <div class="result-card">
-                                <span class="result-label">Ahorro Mensual Estimado</span>
-                                <span class="result-amount gradient-text" id="savings-amount">$0</span>
+                            <div class="result-card" style="padding: 10px 15px;">
+                                <span class="result-label" style="font-size: 0.8rem;">Ahorro Mensual</span>
+                                <span class="result-amount gradient-text" id="savings-amount" style="font-size: 1.4rem;">$0</span>
                             </div>
-                            <div class="result-card">
-                                <span class="result-label">Talento Senior Liberado</span>
-                                <span class="result-amount" id="freed-hours" style="color: var(--primary);">0 horas</span>
+                            <div class="result-card" style="padding: 10px 15px;">
+                                <span class="result-label" style="font-size: 0.8rem;">Talento Liberado</span>
+                                <span class="result-amount" id="freed-hours" style="color: var(--primary); font-size: 1.4rem;">0 horas</span>
                             </div>
-                            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">* Estimación basada en costos promedio de honorarios senior en Colombia y reducción operativa del 90%.</p>
                         </div>
-                    </div>
-                    
-                    <!-- Gráfico ROI (Punto 6) -->
-                    <div class="roi-chart-container" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
-                        <h4 class="text-center" style="margin-bottom: 20px; color: var(--text-muted); font-size: 1rem;">Impacto Visual del Ahorro</h4>
-                        <div class="roi-chart">
-                            <div class="chart-column">
-                                <div class="chart-bar-wrapper">
-                                    <div class="chart-bar current-cost" id="bar-current">
-                                        <span class="bar-value" id="val-current">$0</span>
+                        <div class="roi-chart-column">
+                            <div class="roi-chart">
+                                <div class="chart-column">
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar current-cost" id="bar-current">
+                                            <span class="bar-value" id="val-current">$0</span>
+                                        </div>
                                     </div>
+                                    <span class="chart-label">Costo Actual</span>
                                 </div>
-                                <span class="chart-label">Costo Actual Mensual</span>
-                            </div>
-                            <div class="chart-column">
-                                <div class="chart-bar-wrapper">
-                                    <div class="chart-bar floovu-cost" id="bar-floovu">
-                                        <span class="bar-value" id="val-floovu">$0</span>
+                                <div class="chart-column">
+                                    <div class="chart-bar-wrapper">
+                                        <div class="chart-bar floovu-cost" id="bar-floovu">
+                                            <span class="bar-value" id="val-floovu">$0</span>
+                                        </div>
                                     </div>
+                                    <span class="chart-label">Costo Floovu</span>
                                 </div>
-                                <span class="chart-label">Costo con Floovu</span>
                             </div>
                         </div>
                     </div>
+                    <p class="text-center" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px; margin-bottom: 0;">* Estimación basada en costos promedio senior y reducción operativa del 90%.</p>
+                </div>
                 </div>
             </div>
         </div>
