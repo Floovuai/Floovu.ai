@@ -153,8 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const valFloovu = document.getElementById('val-floovu');
 
         if (barCurrent && barFloovu) {
-            barCurrent.style.height = '100%';
-            barFloovu.style.height = (floovuCost / currentCost * 100) + '%';
+            // Máximo posible: 50 abogados, 40 horas
+            const maxPossibleCost = 50 * 40 * 4.3 * 120000;
+            
+            barCurrent.style.height = Math.max(5, (currentCost / maxPossibleCost * 100)) + '%';
+            barFloovu.style.height = Math.max(3, (floovuCost / maxPossibleCost * 100)) + '%';
             
             valCurrent.innerText = '$' + (Math.round(currentCost / 1000000 * 10) / 10) + 'M';
             valFloovu.innerText = '$' + (Math.round(floovuCost / 1000000 * 10) / 10) + 'M';

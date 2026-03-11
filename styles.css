@@ -1658,8 +1658,8 @@ a {
 /* ROI Calculator */
 .calculator-grid {
     display: grid;
-    grid-template-columns: 1fr 0.8fr 0.8fr;
-    gap: 20px;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    gap: 15px;
     align-items: center;
 }
 
@@ -1783,10 +1783,10 @@ a {
 .flow-step {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 25px;
+    padding: 20px;
+    border-radius: 20px;
     text-align: center;
-    min-width: 180px;
+    min-width: 150px;
     position: relative;
     transition: var(--transition);
 }
@@ -1826,10 +1826,15 @@ a {
     white-space: nowrap;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .calculator-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
+    }
+    
+    .roi-chart {
+        height: 100px;
+        margin-top: 30px;
     }
 }
 
@@ -2107,9 +2112,10 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: 120px;
+    height: 100px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 .chart-column {
@@ -2150,11 +2156,11 @@ a {
 
 .bar-value {
     position: absolute;
-    top: -22px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.7rem;
+    font-weight: 800;
     color: #fff;
     white-space: nowrap;
 }
