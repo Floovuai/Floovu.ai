@@ -1833,8 +1833,8 @@ a {
     }
     
     .roi-chart {
-        height: 100px;
-        margin-top: 30px;
+        height: 140px;
+        margin: 40px auto 20px;
     }
 }
 
@@ -2113,7 +2113,7 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: 100px;
+    height: 140px;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -2127,15 +2127,15 @@ a {
 }
 
 .chart-bar-wrapper {
-    width: 45px;
-    height: 100px;
+    width: 50px;
+    height: 110px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
     position: relative;
     display: flex;
     align-items: flex-end;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: visible;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .chart-bar {

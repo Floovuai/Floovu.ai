@@ -153,11 +153,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const valFloovu = document.getElementById('val-floovu');
 
         if (barCurrent && barFloovu) {
-            // Máximo posible: 50 abogados, 40 horas
-            const maxPossibleCost = 50 * 40 * 4.3 * 120000;
+            // Escalamiento visual: barCurrent entre 40% y 95%, barFloovu proporcional a la eficiencia
+            const maxInputs = 50 * 40;
+            const currentInputs = lawyers * hoursPerWeek;
             
-            barCurrent.style.height = Math.max(5, (currentCost / maxPossibleCost * 100)) + '%';
-            barFloovu.style.height = Math.max(3, (floovuCost / maxPossibleCost * 100)) + '%';
+            // La barra roja siempre ocupa al menos el 40% para que se vea "llena"
+            const redHeight = 40 + (currentInputs / maxInputs * 55); 
+            // La verde es el 10% de la roja (basado en el 90% de ahorro)
+            const greenHeight = redHeight * 0.1;
+            
+            barCurrent.style.height = redHeight + '%';
+            barFloovu.style.height = Math.max(5, greenHeight) + '%';
             
             valCurrent.innerText = '$' + (Math.round(currentCost / 1000000 * 10) / 10) + 'M';
             valFloovu.innerText = '$' + (Math.round(floovuCost / 1000000 * 10) / 10) + 'M';
