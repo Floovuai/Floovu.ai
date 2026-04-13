@@ -1292,6 +1292,96 @@ a {
     transform: translateY(-3px);
 }
 
+/* ===== SOLUTION SELECTOR (nuevo) ===== */
+.solution-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 780px;
+    margin: 0 auto 10px;
+}
+
+.solution-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.solution-card:hover {
+    transform: translateX(6px);
+    border-color: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.solution-featured {
+    border-color: rgba(79,209,197,0.3) !important;
+    background: linear-gradient(145deg, rgba(79,209,197,0.06), rgba(255,255,255,0.01)) !important;
+}
+
+.solution-featured:hover {
+    border-color: rgba(79,209,197,0.55) !important;
+    box-shadow: 0 12px 35px rgba(79,209,197,0.15) !important;
+}
+
+.solution-icon {
+    font-size: 1.8rem;
+    width: 48px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.solution-body {
+    flex: 1;
+}
+
+.solution-body h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 4px;
+    letter-spacing: -0.3px;
+}
+
+.solution-body p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.solution-badge {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .solution-card {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 18px 20px;
+    }
+    .solution-badge {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ===================================== */
+
 /* Costo de Inacci�n (COI) */
 .coi-section {
     background: linear-gradient(135deg, rgba(255, 107, 107, 0.08), rgba(10, 10, 15, 0.2));

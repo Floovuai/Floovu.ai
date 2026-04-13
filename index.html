@@ -48,12 +48,11 @@
     <section id="inicio" class="hero section">
         <div class="container hero-content">
             <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-                <h1 class="gradient-text" id="hero-title" style="line-height: 1.2;">Libere a sus mejores abogados de la carga operativa.
+                <h1 class="gradient-text" id="hero-title" style="line-height: 1.2;">Automatiza lo repetitivo.<br>Escala lo que importa.
                 </h1>
                 <p
                     style="color: #e0e0e0; text-shadow: 0 2px 4px rgba(0,0,0,0.5); font-size: 1.25rem; margin-bottom: 35px; line-height: 1.6;">
-                    Escale su despacho con Inteligencia Artificial que factura mientras usted duerme. Automatización
-                    llave en mano para Real Estate y Sector Legal en Colombia.</p>
+                    Inteligencia Artificial que trabaja 24/7 por tu negocio. Automatización llave en mano para Legal, Real Estate y cualquier industria en Colombia.</p>
                 <div class="hero-buttons">
                     <a href="#contacto" class="btn btn-primary btn-cta"
                         style="font-size: 1.1rem; padding: 15px 35px; background: #007BFF; border-color: #007BFF; box-shadow: 0 4px 15px rgba(0,123,255,0.4); text-transform: uppercase;">Agendar Auditoría de Procesos con IA</a>
@@ -74,24 +73,48 @@
         <div class="bg-glow"></div>
     </section>
 
-    <!-- Punto 7: Efecto Espejo (Selector de Perfil) -->
-    <section class="section" style="padding-top: 0;">
+    <!-- Selector de Soluciones -->
+    <section class="section" style="padding-top: 0; padding-bottom: 10px;">
         <div class="container">
-            <div class="profile-selector" data-aos="fade-up">
-                <button class="profile-btn active" onclick="filterProfile('legal')">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                    <div>
-                        <h4>Soy Abogado / Firma</h4>
-                        <p>Busco eficiencia procesal y blindaje</p>
+            <p class="text-center" style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 0.5px;" data-aos="fade-up">¿Qué quieres automatizar?</p>
+            <div class="solution-selector" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Legal AI -->
+                <div class="solution-card" onclick="filterProfile('legal')" style="cursor:pointer;">
+                    <div class="solution-icon" style="color: #4CAF50;"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="solution-body">
+                        <h4>Análisis Legal</h4>
+                        <p>Documentos, plazos y estrategia jurídica automatizados para despachos</p>
                     </div>
-                </button>
-                <button class="profile-btn" onclick="filterProfile('realestate')">
-                    <i class="fa-solid fa-building-user"></i>
-                    <div>
-                        <h4>Soy Inmobiliaria / Agente</h4>
-                        <p>Busco cierres rápidos y automatización</p>
+                    <span class="solution-badge" style="background: rgba(76,175,80,0.15); color: #4CAF50; border-color: rgba(76,175,80,0.3);">Legal AI →</span>
+                </div>
+
+                <!-- Real Estate AI -->
+                <div class="solution-card" onclick="filterProfile('realestate')" style="cursor:pointer;">
+                    <div class="solution-icon" style="color: #3182ce;"><i class="fa-solid fa-building-user"></i></div>
+                    <div class="solution-body">
+                        <h4>Gestión Inmobiliaria</h4>
+                        <p>Evaluación de propiedades, legalidad y cierres más rápidos</p>
                     </div>
-                </button>
+                    <span class="solution-badge" style="background: rgba(49,130,206,0.15); color: #3182ce; border-color: rgba(49,130,206,0.3);">Real Estate AI →</span>
+                </div>
+
+                <!-- Cognitive Agent - DESTACADO -->
+                <div class="solution-card solution-featured" onclick="location.href='cognitive-agent.html'" style="cursor:pointer;">
+                    <div class="solution-icon" style="color: #4FD1C5;"><i class="fa-solid fa-robot"></i></div>
+                    <div class="solution-body">
+                        <h4>Ventas & Atención 24/7</h4>
+                        <p>Agente IA conversacional para <strong style="color:#4FD1C5;">cualquier industria</strong> por WhatsApp</p>
+                    </div>
+                    <span class="solution-badge" style="background: rgba(79,209,197,0.15); color: #4FD1C5; border-color: rgba(79,209,197,0.4);">Cognitive Agent ⭐ →</span>
+                </div>
+
+            </div>
+            <div class="text-center" style="margin-top: 18px;" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contacto" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.2s;"
+                   onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">
+                    ¿Tu rubro es diferente? Agenda una consultoría personalizada →
+                </a>
             </div>
         </div>
     </section>
@@ -136,8 +159,8 @@
                     <div class="coi-item">
                         <div class="coi-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
                         <div class="coi-text">
-                            <h4>Vencimiento de Términos</h4>
-                            <p>El error humano en el CGP/CPACA puede costar millones en multas o procesos perdidos por un solo día de descuido.</p>
+                            <h4>Tiempo Perdido en Tareas Repetitivas</h4>
+                            <p>Cada hora que tu equipo dedica a procesos manuales es una hora que no se invierte en crecer el negocio.</p>
                         </div>
                     </div>
                     <div class="coi-item">
@@ -151,7 +174,7 @@
                         <div class="coi-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
                         <div class="coi-text">
                             <h4>Pérdida de Ventaja Competitiva</h4>
-                            <p>Mientras lo piensas, tu competencia ya está usando Floovu para responder 90% más rápido que tú.</p>
+                            <p>Mientras lo piensas, tu competencia ya está usando IA para responder más rápido, cerrar más negocios y escalar sin contratar.</p>
                         </div>
                     </div>
                 </div>
@@ -322,7 +345,7 @@
                         <ul class="features-list">
                             <li><i class="fa-solid fa-brain" style="color: #4FD1C5;"></i> Memoria Cognitiva (Auto-Aprendizaje)</li>
                             <li><i class="fa-brands fa-whatsapp" style="color: #4FD1C5;"></i> Flujos WhatsApp & Google Sheets</li>
-                            <li><i class="fa-solid fa-cart-shopping" style="color: #4FD1C5;"></i> Conversiones & Pagos 24/7</li>
+                            <li><i class="fa-solid fa-cart-shopping" style="color: #4FD1C5;"></i> Conversiones & Cierres 24/7</li>
                         </ul>
 
                         <div class="pricing">
@@ -842,16 +865,21 @@
                         capacitación técnica compleja.</div>
                 </div>
 
-                <!-- Punto 13: FAQ de Objeciones Reales -->
+                <!-- Objeciones Reales -->
                 <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">¿La IA va a reemplazar a mis abogados? <i
+                    <div class="faq-question">¿La IA va a reemplazar a mi equipo? <i
                             class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer"><strong>No.</strong> Les quita el trabajo de pasante para que ellos puedan litigar como socios. La IA maneja la carga operativa, pero el pensamiento estratégico siempre será humano.</div>
+                    <div class="faq-answer"><strong>No.</strong> Les quita el trabajo operativo repetitivo para que puedan enfocarse en lo estratégico. La IA maneja la carga rutinaria, pero el criterio y la relación con el cliente siempre serán humanos.</div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
-                    <div class="faq-question">¿Qué precisión tiene con el Código de Procedimiento Administrativo (CPACA)? <i
+                    <div class="faq-question">¿Funciona para mi industria aunque no sea legal ni inmobiliaria? <i
                             class="fa-solid fa-chevron-down"></i></div>
-                    <div class="faq-answer">Floovu PRO v8 está entrenado específicamente en la narrativa forense colombiana. Entiende la diferencia entre términos de días hábiles e irrigados, y conoce la prelación minsterial del CPACA y el CGP al detalle.</div>
+                    <div class="faq-answer">Sí. El <strong>Cognitive Agent</strong> está diseñado para adaptarse a cualquier industria: restaurantes, tiendas, academias, consultorios, constructoras y más. Agenda una consultoría y evaluamos tu caso específico sin costo.</div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">¿Qué precisión tiene con el sector legal colombiano (CPACA/CGP)? <i
+                            class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Floovu Legal AI PRO v8 está entrenado específicamente en la narrativa forense colombiana. Entiende términos de días hábiles, prelación ministerial del CPACA y del CGP al detalle, reduciendo a cero el riesgo por vencimientos.</div>
                 </div>
             </div>
         </div>

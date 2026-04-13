@@ -205,14 +205,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// --- PUNTO 7: EFECTO ESPEJO (FILTER PROFILE) ---
+// --- FILTER PROFILE (Selector de Soluciones) ---
 function filterProfile(type) {
-    const buttons = document.querySelectorAll('.profile-btn');
     const testimonials = document.querySelectorAll('.testimonial-card');
     const products = document.querySelectorAll('.product-card');
     const heroTitle = document.getElementById('hero-title');
-    
-    // Cambiar texto del título (Punto 7)
+
+    // Resaltar la card seleccionada
+    document.querySelectorAll('.solution-card').forEach(card => {
+        card.style.opacity = '0.5';
+        card.style.transform = 'translateX(0)';
+    });
+    const activeCard = document.querySelector(`.solution-card[onclick="filterProfile('${type}')"]`);
+    if (activeCard) {
+        activeCard.style.opacity = '1';
+        activeCard.style.transform = 'translateX(8px)';
+    }
+
+    // Actualizar título hero según el rubro
     if (heroTitle) {
         if (type === 'legal') {
             heroTitle.innerText = "La IA Senior que blinda tus términos legales";
@@ -221,48 +231,42 @@ function filterProfile(type) {
         }
     }
 
-    // Cambiar estado de botones
-    buttons.forEach(btn => {
-        if (btn.getAttribute('onclick').includes(type)) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-
-    // Scroll suave a la sección de productos para que vean el resultado
+    // Scroll a productos
     const productosSection = document.getElementById('productos');
     if (productosSection) {
-        productosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => productosSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
     }
 
-    // Filtrar productos
+    // Filtrar productos con fade
     products.forEach(card => {
+        card.style.transition = 'opacity 0.3s, transform 0.3s';
         card.style.opacity = '0.3';
         card.style.transform = 'scale(0.95)';
-        
         setTimeout(() => {
+            const show = (type === 'legal' && card.classList.contains('profile-legal')) ||
+                         (type === 'realestate' && card.classList.contains('profile-realestate')) ||
+                         card.classList.contains('profile-legal') && card.classList.contains('profile-realestate');
             if (type === 'legal' && !card.classList.contains('profile-legal')) {
                 card.style.display = 'none';
             } else if (type === 'realestate' && !card.classList.contains('profile-realestate')) {
                 card.style.display = 'none';
             } else {
-                card.style.display = ''; // Restaurar display original
+                card.style.display = '';
                 card.style.opacity = '1';
                 card.style.transform = 'scale(1)';
             }
         }, 300);
     });
 
-    // Filtrar testimonios con animación
+    // Filtrar testimonios con fade
     testimonials.forEach(card => {
+        card.style.transition = 'opacity 0.3s, transform 0.3s';
         card.style.opacity = '0.3';
         card.style.transform = 'scale(0.95)';
-        
         setTimeout(() => {
-            if (type === 'legal' && card.classList.contains('profile-realestate')) {
+            if (type === 'legal' && card.classList.contains('profile-realestate') && !card.classList.contains('profile-legal')) {
                 card.style.display = 'none';
-            } else if (type === 'realestate' && card.classList.contains('profile-legal')) {
+            } else if (type === 'realestate' && card.classList.contains('profile-legal') && !card.classList.contains('profile-realestate')) {
                 card.style.display = 'none';
             } else {
                 card.style.display = 'block';
